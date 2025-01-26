@@ -14,14 +14,23 @@
 
         const app = document.getElementById('app');
 
-        function Header() {
-            return <h1>Develop, preview, ship!</h1>;
+
+        function Header(props) {
+            // console.log(title);
+            return <h1>{props.title}</h1>;
         }
 
         function HomePage() {
+            const names = ['John', 'Prius', 'Boxer'];
             return (
                 <div>
-                    <Header/>
+                    <Header title="Holla!"/>
+                    <Header title="Hello!"/>
+                    <ul>
+                        {names.map((name) => (
+                            <li key={name}>{name}</li>
+                        ))}
+                    </ul>
                 </div>
                 );
         }
